@@ -1,1 +1,2 @@
-
+killall apoolminer
+killall aleominer
