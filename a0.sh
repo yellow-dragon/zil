@@ -15,7 +15,7 @@ while true; do
   else
     if [ "$qubic" -eq 0 ]; then
 	  killall aleominer 
-      screen -S qubic -dm bash -c "/app-data/miners/apoolminer-2.6.1/apoolminer --algo qubic --account CP_e2sig0aa15 --worker $(hostname) --pool qubic1.hk.apool.io:3334 --rest --cpu-off"
+      screen -S qubic -dm bash -c "/app-data/miners/apoolminer-2.6.1/apoolminer --algo qubic --account CP_e2sig0aa15 --worker $(echo $(hostname) | awk '{print substr($0, 1, 15)}') --pool 8.217.123.224:3334 --rest --cpu-off"
       qubic=1
 	  aleo=0
     fi
