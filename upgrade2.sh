@@ -1,5 +1,5 @@
 #!/bin/bash 
-cd /app-data/miners 
+cd /app-data/miners/bzminer-21.5.1
 
 rm -f startup.sh
 rm -f a0.sh
