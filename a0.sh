@@ -2,7 +2,6 @@
 killall zil.sh
 qubic=0
 aleo=0
-echo a0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 
 while true; do
   response=$(curl -s http://qubic1.hk.apool.io:8001/api/qubic/epoch_challenge)
