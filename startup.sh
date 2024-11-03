@@ -1,5 +1,5 @@
 #!/bin/bash
-echo ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+echo "ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
 killall apoolminer
 killall aleominer
 killall a0.sh
