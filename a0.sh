@@ -9,7 +9,7 @@ while true; do
   if echo "$response" | grep -q "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="; then
     if [ "$aleo" -eq 0 ]; then
 	  killall apoolminer      
-      screen -S aleo -dm bash -c "/app-data/miners/aleominer-3.0.10/aleominer -u stratum+ssl://aleo-asia.f2pool.com:4420 -w hoanglong.$(hostname)"
+      screen -S aleo -dm bash -c "/app-data/miners/aleominer-3.0.12/aleominer -u stratum+ssl://aleo-asia.f2pool.com:4420 -w hoanglong.$(hostname)"
       aleo=1
 	  qubic=0
     fi
