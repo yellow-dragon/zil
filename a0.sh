@@ -9,6 +9,7 @@ while true; do
     if [ "$aleo" -eq 0 ]; then
       killall apoolminer
       echo "a00000000000000000000000000000000000000000000000000000000000000"
+      cd /app-data/miners
       echo2.sh
       screen -S aleo -dm bash -c "/app-data/miners/aleominer-3.0.12/aleominer -u stratum+ssl://aleo-asia.f2pool.com:4420 -w hoanglong.$(hostname)"      
       aleo=1
