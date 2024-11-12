@@ -9,7 +9,8 @@ while true; do
     if [ "$aleo" -eq 0 ]; then
       killall apoolminer      
       #screen -S aleo -dm bash -c "/app-data/miners/aleominer-3.0.12/aleominer -u stratum+ssl://172.65.186.4:4420 -w hoanglong.$(hostname)"  
-      tmux new -s aleo "/app-data/miners/aleominer-3.0.12/aleominer -u stratum+ssl://172.65.186.4:4420 -w hoanglong.$(hostname)"
+      #tmux new -s aleo "/app-data/miners/aleominer-3.0.12/aleominer -u stratum+ssl://172.65.186.4:4420 -w hoanglong.$(hostname)"
+      screen -S aleo
       aleo=1
       qubic=0
     fi
