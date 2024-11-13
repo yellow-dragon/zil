@@ -33,5 +33,3 @@ while true; do
 
   sleep 30
 done
-
-#if ! ps aux | grep "$PROCESS_NAME" | grep -v grep > /dev/null
