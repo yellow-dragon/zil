@@ -19,6 +19,7 @@ while true; do
     fi
   else
     if [ "$qubic" -eq 0 ]; then
+      echo "apoolminer chua chay"
       killall aleominer 
       screen -S qubic -dm bash -c "/app-data/miners/apoolminer-2.6.5/apoolminer --algo qubic --account CP_e2sig0aa15 --worker $(echo $(hostname) | awk '{print substr($0, 1, 15)}') --pool 8.217.123.224:3334 --rest --port 5500 --cpu-off"
       qubic=1
@@ -26,6 +27,7 @@ while true; do
     else
       if ! ps aux | grep "apoolminer" | grep -v grep > /dev/null
       then
+        echo "apoolminer chua chay 2"
         screen -S qubic -dm bash -c "/app-data/miners/apoolminer-2.6.5/apoolminer --algo qubic --account CP_e2sig0aa15 --worker $(echo $(hostname) | awk '{print substr($0, 1, 15)}') --pool 8.217.123.224:3334 --rest --port 5500 --cpu-off"
       fi        
     fi
