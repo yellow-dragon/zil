@@ -28,7 +28,7 @@ while true; do
       if ! ps aux | grep "apoolminer" | grep -v grep > /dev/null
       then
         echo "apoolminer chua chay 2"
-        screen -S qubic -dm bash -c "/app-data/miners/apoolminer-2.6.5/apoolminer --algo qubic --account CP_e2sig0aa15 --worker $(echo $(hostname) | awk '{print substr($0, 1, 15)}') --pool 8.217.123.224:3334 --rest --port 5500 --cpu-off"
+        screen -S qubic -dm bash -c "/app-data/miners/apoolminer-2.6.6/apoolminer --algo qubic --account CP_e2sig0aa15 --worker $(echo $(hostname) | awk '{print substr($0, 1, 15)}') --pool 8.217.123.224:3334 --rest --port 5500 --cpu-off"
       fi        
     fi
   fi
