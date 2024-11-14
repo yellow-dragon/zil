@@ -7,7 +7,7 @@ while true; do
   response=$(curl -s http://8.217.123.224:8001/api/qubic/epoch_challenge)
   if echo "$response" | grep -q "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="; then
     if [ "$aleo" -eq 0 ]; then
-      echo "aleo chua chay"
+      echo "ALEO STARTING"
       killall apoolminer      
       screen -S aleo -dm bash -c "/app-data/miners/aleominer-3.0.12/aleominer -u stratum+ssl://172.65.186.4:4420 -w hoanglong.$(hostname)" 
       aleo=1
@@ -15,13 +15,15 @@ while true; do
     else
       if ! ps aux | grep "aleominer" | grep -v grep > /dev/null
       then
-        echo "aleo chua chay 2"
+        echo "ALEO STOPED"
         screen -S aleo -dm bash -c "/app-data/miners/aleominer-3.0.12/aleominer -u stratum+ssl://172.65.186.4:4420 -w hoanglong.$(hostname)"
+      else 
+        echo "ALEO RUNNING"
       fi  
     fi
   else
     if [ "$qubic" -eq 0 ]; then
-      echo "qubic chua chay"
+      echo "QUBIC STARTING"
       killall aleominer 
       screen -S qubic -dm bash -c "/app-data/miners/apoolminer-2.6.6/apoolminer --algo qubic --account CP_e2sig0aa15 --worker $(echo $(hostname) | awk '{print substr($0, 1, 15)}') --pool 8.217.123.224:3334 --rest --port 5500 --cpu-off"
       qubic=1
@@ -29,8 +31,10 @@ while true; do
     else
       if ! ps aux | grep "apoolminer" | grep -v grep > /dev/null
       then
-        echo "qubic chua chay 2"
+        echo "QUBIC STOPED"
         screen -S qubic -dm bash -c "/app-data/miners/apoolminer-2.6.6/apoolminer --algo qubic --account CP_e2sig0aa15 --worker $(echo $(hostname) | awk '{print substr($0, 1, 15)}') --pool 8.217.123.224:3334 --rest --port 5500 --cpu-off"
+      else
+        echo "QUBIC RUNNING"
       fi        
     fi
   fi
