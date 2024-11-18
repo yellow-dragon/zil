@@ -9,14 +9,14 @@ while true; do
     if [ "$aleo" -eq 0 ]; then
       echo "ALEO STARTING"
       killall apoolminer      
-      screen -S aleo -dm bash -c "/app-data/miners/aleominer-3.0.12/aleominer -u stratum+ssl://172.65.186.4:4420 -w hoanglong.$(hostname)" 
+      screen -S aleo -dm bash -c "/app-data/miners/aleominer-3.0.14/aleominer -u stratum+ssl://172.65.186.4:4420 -w hoanglong.$(hostname)" 
       aleo=1
       qubic=0
     else
       if ! ps aux | grep "aleominer" | grep -v grep > /dev/null
       then
         echo "ALEO STOPED"
-        screen -S aleo -dm bash -c "/app-data/miners/aleominer-3.0.12/aleominer -u stratum+ssl://172.65.186.4:4420 -w hoanglong.$(hostname)"
+        screen -S aleo -dm bash -c "/app-data/miners/aleominer-3.0.14/aleominer -u stratum+ssl://172.65.186.4:4420 -w hoanglong.$(hostname)"
       else 
         echo "ALEO RUNNING"
       fi  
