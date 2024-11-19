@@ -16,6 +16,7 @@ while true; do
       if ! ps aux | grep "aleominer" | grep -v grep > /dev/null
       then
         echo "ALEO STOPED"
+        screen -X -S aleo quit
         screen -S aleo -dm bash -c "/app-data/miners/aleominer-3.0.14/aleominer -u stratum+ssl://172.65.186.4:4420 -w hoanglong.$(hostname)"
       else 
         echo "ALEO RUNNING"
@@ -32,6 +33,7 @@ while true; do
       if ! ps aux | grep "apoolminer" | grep -v grep > /dev/null
       then
         echo "QUBIC STOPED"
+        screen -X -S qubic quit
         screen -S qubic -dm bash -c "/app-data/miners/apoolminer-2.6.6/apoolminer --algo qubic --account CP_e2sig0aa15 --worker $(echo $(hostname) | awk '{print substr($0, 1, 15)}') --pool 8.217.123.224:3334 --rest --port 5500 --cpu-off"
       else
         echo "QUBIC RUNNING"
