@@ -26,7 +26,7 @@ while true; do
     if [ "$qubic" -eq 0 ]; then
       echo "QUBIC STARTING"
       killall aleominer 
-      screen -S qubic -dm bash -c "/app-data/miners/apoolminer-2.6.6/apoolminer --algo qubic --account CP_e2sig0aa15 --worker $(echo $(hostname) | awk '{print substr($0, 1, 15)}') --pool 8.217.123.224:3334 --rest --port 5500 --cpu-off"
+      screen -S qubic -dm bash -c "/app-data/miners/apoolminer-2.6.7/apoolminer --algo qubic --account CP_e2sig0aa15 --worker $(echo $(hostname) | awk '{print substr($0, 1, 15)}') --pool 8.217.123.224:3334 --rest --port 5500 --cpu-off"
       qubic=1
       aleo=0
     else
@@ -34,7 +34,7 @@ while true; do
       then
         echo "QUBIC STOPED"
         screen -X -S qubic quit
-        screen -S qubic -dm bash -c "/app-data/miners/apoolminer-2.6.6/apoolminer --algo qubic --account CP_e2sig0aa15 --worker $(echo $(hostname) | awk '{print substr($0, 1, 15)}') --pool 8.217.123.224:3334 --rest --port 5500 --cpu-off"
+        screen -S qubic -dm bash -c "/app-data/miners/apoolminer-2.6.7/apoolminer --algo qubic --account CP_e2sig0aa15 --worker $(echo $(hostname) | awk '{print substr($0, 1, 15)}') --pool 8.217.123.224:3334 --rest --port 5500 --cpu-off"
       else
         echo "QUBIC RUNNING"
       fi        
