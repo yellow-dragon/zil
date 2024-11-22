@@ -2,7 +2,7 @@
 
 qubic=0
 aleo=0
-
+nvidia-smi -pm 1
 while true; do
   response=$(curl -s http://8.217.123.224:8001/api/qubic/epoch_challenge)
   if echo "$response" | grep -q "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="; then
