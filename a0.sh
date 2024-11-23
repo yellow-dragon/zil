@@ -37,6 +37,7 @@ while true; do
       then
         if [ "$qubicrun" -eq 0 ]; then 
           reboot
+        fi
         echo "QUBIC STOPED"
         qubicrun=0
         screen -X -S qubic quit
