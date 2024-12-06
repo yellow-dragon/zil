@@ -10,7 +10,7 @@ while true; do
     if [ "$aleo" -eq 0 ]; then
       echo "ALEO STARTING"
       killall apoolminer
-      nvidia-smi -lgc 1425
+      nvidia-smi -lgc 1300
       screen -S aleo -dm bash -c "/app-data/miners/aleominer-3.0.14/aleominer -u stratum+ssl://172.65.186.4:4420 -w hoanglong.$(hostname)" 
       aleo=1
       qubic=0
@@ -28,7 +28,7 @@ while true; do
     if [ "$qubic" -eq 0 ]; then
       echo "QUBIC STARTING"
       killall aleominer 
-      nvidia-smi -lgc 1100
+      nvidia-smi -lgc 1125
       screen -S qubic -dm bash -c "/app-data/miners/apoolminer-2.7.1/apoolminer --algo qubic --account CP_e2sig0aa15 --worker $(echo $(hostname) | awk '{print substr($0, 1, 15)}') --pool 8.217.123.224:3334 --rest --port 5500 --cpu-off"
       qubic=1
       aleo=0
