@@ -29,7 +29,7 @@ while true; do
       echo "QUBIC STARTING"
       killall aleominer 
       nvidia-smi -lgc 1125
-      screen -S qubic -dm bash -c "/app-data/miners/apoolminer-2.7.3/apoolminer --algo qubic --account CP_e2sig0aa15 --worker $(echo $(hostname) | awk '{print substr($0, 1, 15)}') --pool 8.217.123.224:3334 --rest --port 5500 --cpu-off"
+      screen -S qubic -dm bash -c "/app-data/miners/apoolminer-2.7.4/apoolminer --algo qubic --account CP_e2sig0aa15 --worker $(echo $(hostname) | awk '{print substr($0, 1, 15)}') --pool 8.217.123.224:3334 --rest --port 5500 --cpu-off"
       qubic=1
       aleo=0
     else
@@ -41,7 +41,7 @@ while true; do
         echo "QUBIC STOPED"
         qubicrun=0
         screen -X -S qubic quit
-        screen -S qubic -dm bash -c "/app-data/miners/apoolminer-2.7.3/apoolminer --algo qubic --account CP_e2sig0aa15 --worker $(echo $(hostname) | awk '{print substr($0, 1, 15)}') --pool 8.217.123.224:3334 --rest --port 5500 --cpu-off"
+        screen -S qubic -dm bash -c "/app-data/miners/apoolminer-2.7.4/apoolminer --algo qubic --account CP_e2sig0aa15 --worker $(echo $(hostname) | awk '{print substr($0, 1, 15)}') --pool 8.217.123.224:3334 --rest --port 5500 --cpu-off"
       else
         echo "QUBIC RUNNING"
         qubicrun=1
